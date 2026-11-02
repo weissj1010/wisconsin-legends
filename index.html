@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261102b">
+<link rel="stylesheet" href="styles.css?v=20261102d">
 </head>
 <body>
 
@@ -124,13 +124,78 @@
   <div class="wrap">
     <div class="sec-head">
       <h2>Meet the <span class="hl">Roster</span></h2>
-      <span class="eyebrow">The people behind the bar</span>
+      <span class="eyebrow">Tap a card to flip it</span>
     </div>
-    <div class="crew">
-      <img src="images/staff-melissa.png" alt="Melissa, General Manager">
-      <img src="images/staff-maddie.png" alt="Maddie, bartender">
-      <img src="images/staff-taylor.png" alt="Taylor, bartender">
-      <img src="images/staff-brittany.png" alt="Brittany, bartender">
+
+    <div class="squad">
+      <div class="squad-head"><h3>The <span class="hl">Captains</span></h3><span class="eyebrow">The Managers</span></div>
+      <div class="crew">
+        <button class="flip" type="button" aria-label="Flip Melissa's card">
+          <span class="flip-inner">
+            <img class="face front" src="images/staff-melissa.png" alt="Melissa, General Manager">
+            <span class="face back" style="--bg:url(images/staff-melissa.png)">
+              <img src="images/logo.png" alt="">
+              <b>Melissa</b>
+              <em>General Manager</em>
+              <span class="rule"></span>
+              <span class="soon">Scouting report coming soon</span>
+              <small>Tap to flip back</small>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="squad">
+      <div class="squad-head"><h3>The <span class="hl">Playmakers</span></h3><span class="eyebrow">Behind the Bar</span></div>
+      <div class="crew">
+        <button class="flip" type="button" aria-label="Flip Maddie's card">
+          <span class="flip-inner">
+            <img class="face front" src="images/staff-maddie.png" alt="Maddie, bartender">
+            <span class="face back" style="--bg:url(images/staff-maddie.png)">
+              <img src="images/logo.png" alt="">
+              <b>Maddie</b>
+              <em>Bartender</em>
+              <span class="rule"></span>
+              <span class="soon">Scouting report coming soon</span>
+              <small>Tap to flip back</small>
+            </span>
+          </span>
+        </button>
+        <button class="flip" type="button" aria-label="Flip Taylor's card">
+          <span class="flip-inner">
+            <img class="face front" src="images/staff-taylor.png" alt="Taylor, bartender">
+            <span class="face back" style="--bg:url(images/staff-taylor.png)">
+              <img src="images/logo.png" alt="">
+              <b>Taylor</b>
+              <em>Bartender</em>
+              <span class="rule"></span>
+              <span class="soon">Scouting report coming soon</span>
+              <small>Tap to flip back</small>
+            </span>
+          </span>
+        </button>
+        <button class="flip" type="button" aria-label="Flip Brittany's card">
+          <span class="flip-inner">
+            <img class="face front" src="images/staff-brittany.png" alt="Brittany, bartender">
+            <span class="face back" style="--bg:url(images/staff-brittany.png)">
+              <img src="images/logo.png" alt="">
+              <b>Brittany</b>
+              <em>Bartender</em>
+              <span class="rule"></span>
+              <span class="soon">Scouting report coming soon</span>
+              <small>Tap to flip back</small>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="squad">
+      <div class="squad-head"><h3>The <span class="hl">Trenches</span></h3><span class="eyebrow">Behind the Grill</span></div>
+      <div class="crew">
+        <div class="card-soon"><img src="images/logo.png" alt=""><b>Cards Dropping Soon</b><span>Kitchen crew</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -153,5 +218,6 @@
   <div class="fine">&copy; 2026 Wisconsin Legends &bull; A Better Sportsbar &bull; Site by <a href="https://jawdropproductions.com" target="_blank" rel="noopener">JAW DROP Productions</a></div>
 </footer>
 
+<script>document.querySelectorAll(".flip").forEach(c=>c.addEventListener("click",()=>c.classList.toggle("on")))</script>
 </body>
 </html>
