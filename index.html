@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261102d">
+<link rel="stylesheet" href="styles.css?v=20261102g">
 </head>
 <body>
 
@@ -122,81 +122,15 @@
 
 <section id="crew">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head roster-head">
       <h2>Meet the <span class="hl">Roster</span></h2>
-      <span class="eyebrow">Tap a card to flip it</span>
     </div>
-
-    <div class="squad">
-      <div class="squad-head"><h3>The <span class="hl">Captains</span></h3><span class="eyebrow">The Managers</span></div>
-      <div class="crew">
-        <button class="flip" type="button" aria-label="Flip Melissa's card">
-          <span class="flip-inner">
-            <img class="face front" src="images/staff-melissa.png" alt="Melissa, General Manager">
-            <span class="face back" style="--bg:url(images/staff-melissa.png)">
-              <img src="images/logo.png" alt="">
-              <b>Melissa</b>
-              <em>General Manager</em>
-              <span class="rule"></span>
-              <span class="soon">Scouting report coming soon</span>
-              <small>Tap to flip back</small>
-            </span>
-          </span>
-        </button>
-      </div>
+    <div class="roster-tabs" role="tablist" aria-label="Roster groups">
+      <button type="button" role="tab" class="on" aria-selected="true" data-g="captains">The Captains<small>Managers</small></button>
+      <button type="button" role="tab" aria-selected="false" data-g="playmakers">The Playmakers<small>Behind the Bar</small></button>
+      <button type="button" role="tab" aria-selected="false" data-g="trenches">The Trenches<small>Behind the Grill</small></button>
     </div>
-
-    <div class="squad">
-      <div class="squad-head"><h3>The <span class="hl">Playmakers</span></h3><span class="eyebrow">Behind the Bar</span></div>
-      <div class="crew">
-        <button class="flip" type="button" aria-label="Flip Maddie's card">
-          <span class="flip-inner">
-            <img class="face front" src="images/staff-maddie.png" alt="Maddie, bartender">
-            <span class="face back" style="--bg:url(images/staff-maddie.png)">
-              <img src="images/logo.png" alt="">
-              <b>Maddie</b>
-              <em>Bartender</em>
-              <span class="rule"></span>
-              <span class="soon">Scouting report coming soon</span>
-              <small>Tap to flip back</small>
-            </span>
-          </span>
-        </button>
-        <button class="flip" type="button" aria-label="Flip Taylor's card">
-          <span class="flip-inner">
-            <img class="face front" src="images/staff-taylor.png" alt="Taylor, bartender">
-            <span class="face back" style="--bg:url(images/staff-taylor.png)">
-              <img src="images/logo.png" alt="">
-              <b>Taylor</b>
-              <em>Bartender</em>
-              <span class="rule"></span>
-              <span class="soon">Scouting report coming soon</span>
-              <small>Tap to flip back</small>
-            </span>
-          </span>
-        </button>
-        <button class="flip" type="button" aria-label="Flip Brittany's card">
-          <span class="flip-inner">
-            <img class="face front" src="images/staff-brittany.png" alt="Brittany, bartender">
-            <span class="face back" style="--bg:url(images/staff-brittany.png)">
-              <img src="images/logo.png" alt="">
-              <b>Brittany</b>
-              <em>Bartender</em>
-              <span class="rule"></span>
-              <span class="soon">Scouting report coming soon</span>
-              <small>Tap to flip back</small>
-            </span>
-          </span>
-        </button>
-      </div>
-    </div>
-
-    <div class="squad">
-      <div class="squad-head"><h3>The <span class="hl">Trenches</span></h3><span class="eyebrow">Behind the Grill</span></div>
-      <div class="crew">
-        <div class="card-soon"><img src="images/logo.png" alt=""><b>Cards Dropping Soon</b><span>Kitchen crew</span></div>
-      </div>
-    </div>
+    <div class="crew" id="roster" aria-live="polite"></div>
   </div>
 </section>
 
@@ -218,6 +152,50 @@
   <div class="fine">&copy; 2026 Wisconsin Legends &bull; A Better Sportsbar &bull; Site by <a href="https://jawdropproductions.com" target="_blank" rel="noopener">JAW DROP Productions</a></div>
 </footer>
 
-<script>document.querySelectorAll(".flip").forEach(c=>c.addEventListener("click",()=>c.classList.toggle("on")))</script>
+<script>
+(function(){
+  var G={
+    captains:[{img:"images/staff-melissa.png",alt:"Melissa, General Manager"}],
+    playmakers:[{img:"images/staff-maddie.png",alt:"Maddie, bartender"},{img:"images/staff-taylor.png",alt:"Taylor, bartender"},{img:"images/staff-brittany.png",alt:"Brittany, bartender"}],
+    trenches:[{soon:true}]
+  };
+  var max=0;for(var k in G)max=Math.max(max,G[k].length);
+  var root=document.getElementById("roster"),slots=[];
+  function face(p){
+    if(!p)return '<span class="card-back"><img src="images/logo.png" alt=""></span>';
+    if(p.soon)return '<span class="card-soon"><img src="images/logo.png" alt=""><b>Cards Dropping Soon</b><span>Kitchen crew</span></span>';
+    return '<img src="'+p.img+'" alt="'+p.alt+'">';
+  }
+  for(var i=0;i<max;i++){
+    var d=document.createElement("div");d.className="slot";
+    d.innerHTML='<div class="slot-inner"><div class="face a"></div><div class="face b"></div></div>';
+    root.appendChild(d);slots.push({el:d,inner:d.firstChild,a:d.querySelector(".a"),b:d.querySelector(".b"),rot:0,shown:false});
+  }
+  function vis(s){return s.rot%2===0?s.a:s.b}
+  function hid(s){return s.rot%2===0?s.b:s.a}
+  function turn(s){s.rot++;s.inner.style.transform="rotateY("+(s.rot*180)+"deg)"}
+  function show(g,first){
+    var list=G[g];
+    slots.forEach(function(s,i){
+      var p=list[i];
+      if(first){if(p){vis(s).innerHTML=face(p);s.shown=true}else s.el.hidden=true;return}
+      setTimeout(function(){
+        if(!s.shown&&!p)return;
+        if(!s.shown){vis(s).innerHTML=face(null);s.el.hidden=false;s.shown=true;void s.el.offsetWidth}
+        hid(s).innerHTML=face(p);turn(s);
+        if(!p){s.shown=false;setTimeout(function(){if(!s.shown)s.el.hidden=true},720)}
+      },i*110);
+    });
+  }
+  var tabs=document.querySelectorAll(".roster-tabs button"),cur="captains";
+  tabs.forEach(function(t){t.addEventListener("click",function(){
+    if(t.dataset.g===cur)return;cur=t.dataset.g;
+    tabs.forEach(function(x){var on=x===t;x.classList.toggle("on",on);x.setAttribute("aria-selected",on)});
+    show(cur,false);
+  })});
+  show(cur,true);
+})();
+</script>
+<script>(function(){var n=document.querySelector(".nav");function f(){document.documentElement.style.setProperty("--navh",n.offsetHeight+"px")}f();addEventListener("resize",f)})();</script>
 </body>
 </html>
