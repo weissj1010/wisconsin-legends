@@ -9,15 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261102i">
+<link rel="stylesheet" href="styles.css?v=20261102j">
 </head>
 <body>
 
-<div class="ticker">
-  <span>Every Packers, Brewers, Badgers &amp; Bucks game</span>
-  <span>N49W34630 E Wisconsin Ave &bull; Okauchee, WI &bull; (262) 468-2008</span>
-</div>
-
+<header class="topbar">
 <nav class="nav">
   <a class="logo" href="index.html"><img src="images/logo.png" alt="Wisconsin Legends"></a>
   <ul>
@@ -29,6 +25,11 @@
   </ul>
   <a class="btn btn-gold" href="https://maps.google.com/?q=N49W34630+E+Wisconsin+Ave,+Okauchee,+WI+53069" target="_blank" rel="noopener">Get Directions</a>
 </nav>
+  <div class="ticker" aria-label="Legends news">
+    <span class="tk-label">Legends<b>Live</b></span>
+    <div class="tk-track"><div class="tk-move"><span class="tk-item">Every Packers, Brewers, Badgers &amp; Bucks game</span><span class="tk-item">Sandwich of the Week: Lobster Roll</span><span class="tk-item">Tuesday Wing Night: 75&cent; wings + Bingo at 6:30</span><span class="tk-item">Wednesday: $3 Tacos</span><span class="tk-item">Friday Fish Fry</span><span class="tk-item">Breakfast from 11 AM for noon Packers kickoffs</span><span class="tk-item">Widows Weekend: Sat Nov 21</span><span class="tk-item">Thankful &amp; Thirsty: Wed Nov 25</span><span class="tk-item">Jingle &amp; Mingle: Sat Dec 19</span><span class="tk-item">N49W34630 E Wisconsin Ave, Okauchee</span><span class="tk-item">(262) 468-2008</span><span aria-hidden="true" class="tk-dup"><span class="tk-item">Every Packers, Brewers, Badgers &amp; Bucks game</span><span class="tk-item">Sandwich of the Week: Lobster Roll</span><span class="tk-item">Tuesday Wing Night: 75&cent; wings + Bingo at 6:30</span><span class="tk-item">Wednesday: $3 Tacos</span><span class="tk-item">Friday Fish Fry</span><span class="tk-item">Breakfast from 11 AM for noon Packers kickoffs</span><span class="tk-item">Widows Weekend: Sat Nov 21</span><span class="tk-item">Thankful &amp; Thirsty: Wed Nov 25</span><span class="tk-item">Jingle &amp; Mingle: Sat Dec 19</span><span class="tk-item">N49W34630 E Wisconsin Ave, Okauchee</span><span class="tk-item">(262) 468-2008</span></span></div></div>
+  </div>
+</header>
 
 <header class="page-hero">
   <div class="wrap">
@@ -253,6 +254,6 @@
   <div class="fine">&copy; 2026 Wisconsin Legends &bull; A Better Sportsbar &bull; Site by <a href="https://jawdropproductions.com" target="_blank" rel="noopener">JAW DROP Productions</a></div>
 </footer>
 
-<script>(function(){var n=document.querySelector(".nav");function f(){document.documentElement.style.setProperty("--navh",n.offsetHeight+"px")}f();addEventListener("resize",f)})();</script>
+<script>(function(){var n=document.querySelector(".topbar");function f(){document.documentElement.style.setProperty("--navh",n.offsetHeight+"px")}f();addEventListener("resize",f)})();</script>
 </body>
 </html>
