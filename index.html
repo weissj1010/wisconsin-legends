@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261102g">
+<link rel="stylesheet" href="styles.css?v=20261102i">
 </head>
 <body>
 
@@ -155,15 +155,15 @@
 <script>
 (function(){
   var G={
-    captains:[{img:"images/staff-melissa.png",alt:"Melissa, General Manager"}],
+    captains:[{img:"images/staff-melissa.png",alt:"Melissa, General Manager"},{name:"Jesse",role:"VP of Operations"}],
     playmakers:[{img:"images/staff-maddie.png",alt:"Maddie, bartender"},{img:"images/staff-taylor.png",alt:"Taylor, bartender"},{img:"images/staff-brittany.png",alt:"Brittany, bartender"}],
-    trenches:[{soon:true}]
+    trenches:[{name:"Dave-O",role:"Kitchen Manager"}]
   };
   var max=0;for(var k in G)max=Math.max(max,G[k].length);
   var root=document.getElementById("roster"),slots=[];
   function face(p){
     if(!p)return '<span class="card-back"><img src="images/logo.png" alt=""></span>';
-    if(p.soon)return '<span class="card-soon"><img src="images/logo.png" alt=""><b>Cards Dropping Soon</b><span>Kitchen crew</span></span>';
+    if(p.name)return '<span class="card-soon" role="img" aria-label="'+p.name+', '+p.role+'"><img src="images/logo.png" alt=""><b>'+p.name+'</b><span class="role">'+p.role+'</span></span>';
     return '<img src="'+p.img+'" alt="'+p.alt+'">';
   }
   for(var i=0;i<max;i++){

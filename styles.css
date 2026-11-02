@@ -204,3 +204,8 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
   .roster-tabs button{font-size:19px}
   .roster-tabs button small{font-size:9px;letter-spacing:.14em}
 }
+.card-soon b{font-size:clamp(40px,4.4vw,60px)}
+.card-soon .role{display:flex;align-items:center;gap:10px;color:var(--cream);font-size:12px;letter-spacing:.22em}
+.card-soon .role::before,.card-soon .role::after{content:"";width:22px;height:1px;background:var(--gold)}
+.card-soon .role{white-space:nowrap}
+@media (max-width:640px){.card-soon{padding:16px 10px}.card-soon .role{font-size:10px;letter-spacing:.14em;gap:6px}.card-soon .role::before,.card-soon .role::after{width:12px}}
