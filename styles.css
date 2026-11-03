@@ -338,3 +338,6 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
 .lf-tower ul.deals{font-size:clamp(13px,1.05vw,17px);line-height:1.15;color:#f4efe2;letter-spacing:.04em}
 .lf-tower ul.deals li{margin-bottom:12px}
 .lf-tower ul.deals b{display:block;font-weight:400;color:var(--gold);font-size:2em;line-height:1}
+
+.lf-tower ul li:nth-child(5){margin-top:0}.lf-tower ul li.sm:first-of-type{margin-top:14px}
+.lf-tower ul li:not(.sm)+li.sm{margin-top:16px}
