@@ -341,3 +341,5 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
 
 .lf-tower ul li:nth-child(5){margin-top:0}.lf-tower ul li.sm:first-of-type{margin-top:14px}
 .lf-tower ul li:not(.sm)+li.sm{margin-top:16px}
+.lf-tower{justify-content:center;padding-top:22px;padding-bottom:22px}
+.lf-tower ul.deals li:last-child{margin-bottom:0}
