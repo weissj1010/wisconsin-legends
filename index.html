@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261103q">
+<link rel="stylesheet" href="styles.css?v=20261103s">
 </head>
 <body>
 
@@ -34,7 +34,7 @@
 <header id="top" class="hero">
   <div class="hero-inner">
     <span class="tag">Okauchee&rsquo;s Game Day Headquarters</span>
-    <h1><span class="nw">Every Game. Every Seat.</span><br><span class="hl">Every Legend.</span></h1>
+    <h1 aria-label="Every game. Every seat. Every screen. Legendary."><span class="nw" aria-hidden="true">Every <span class="roll"><span class="rw on">Game.</span><span class="rw">Seat.</span><span class="rw">Screen.</span></span></span><br><span class="hl" aria-hidden="true">Legendary.</span></h1>
     <p>20 HD TVs, a 100&rdquo; screen and 14 taps. Every Packers, Brewers, Badgers, Bucks and Marquette game, with a stadium-style menu that holds up to the hype.</p>
     <div class="cta">
       <a class="btn btn-gold" href="menu.html">See the Menu</a>
@@ -228,5 +228,14 @@
 })();
 </script>
 <script>(function(){var n=document.querySelector(".topbar");function f(){document.documentElement.style.setProperty("--navh",n.offsetHeight+"px")}f();addEventListener("resize",f)})();</script>
+<script>
+(function(){var r=document.querySelector(".roll");if(!r)return;var w=[].slice.call(r.querySelectorAll(".rw")),i=0;
+function size(){r.style.width=w[i].offsetWidth+"px"}
+size();addEventListener("resize",size);if(document.fonts)document.fonts.ready.then(size);
+setInterval(function(){var cur=w[i];i=(i+1)%w.length;var nx=w[i];
+cur.classList.remove("on");cur.classList.add("out");
+nx.classList.remove("out");nx.classList.add("on");size();
+setTimeout(function(){cur.classList.add("reset");cur.classList.remove("out");void cur.offsetWidth;cur.classList.remove("reset")},650)},2000)})();
+</script>
 </body>
 </html>
