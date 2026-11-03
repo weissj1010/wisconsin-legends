@@ -374,3 +374,13 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
   100%{transform:translateY(-50%) perspective(1400px) rotateY(-14deg)}
 }
 @media (prefers-reduced-motion:reduce){.hero-trophy{animation:none;transform:translateY(-50%)}}
+
+/* intro loader video */
+html.loading,html.loading body{overflow:hidden}
+.loader{position:fixed;inset:0;z-index:9999;background:#0d2219;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease}
+.loader video{width:100%;height:100%;object-fit:cover;display:block}
+.loader.out{opacity:0;pointer-events:none}
+.loader-skip{position:absolute;right:20px;bottom:20px;background:rgba(4,17,11,.6);color:var(--cream);border:1px solid rgba(245,194,66,.5);border-radius:999px;font:700 12px Oswald,sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:9px 18px;cursor:pointer}
+.loader-skip:hover{border-color:var(--gold);color:var(--gold)}
+.loader{background:radial-gradient(ellipse at 50% 50%,#17291f,#0a120e 80%)}
+@media (max-aspect-ratio:9/16){.loader video{object-fit:contain}}
