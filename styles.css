@@ -369,8 +369,8 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
 /* trophy turning left to right */
 .hero-trophy{transform:translateY(-50%) perspective(1400px) rotateY(0deg);animation:trophyTurn 6s ease-in-out infinite;will-change:transform}
 @keyframes trophyTurn{
-  0%{transform:translateY(-50%) perspective(1400px) rotateY(-32deg)}
-  50%{transform:translateY(-50%) perspective(1400px) rotateY(32deg)}
-  100%{transform:translateY(-50%) perspective(1400px) rotateY(-32deg)}
+  0%{transform:translateY(-50%) perspective(1400px) rotateY(-14deg)}
+  50%{transform:translateY(-50%) perspective(1400px) rotateY(14deg)}
+  100%{transform:translateY(-50%) perspective(1400px) rotateY(-14deg)}
 }
 @media (prefers-reduced-motion:reduce){.hero-trophy{animation:none;transform:translateY(-50%)}}
