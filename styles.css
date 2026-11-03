@@ -319,3 +319,13 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
 .lf-wing .lf-plate{border:0;background:rgba(8,26,18,.45)}
 .lf-wing .lf-tower{text-shadow:0 2px 6px rgba(0,0,0,.6)}
 @media (max-width:1100px){.lf-wing{display:none}.lf-rig{grid-template-columns:1fr}}
+
+/* sign sits on its truss, truss spans the full text and rests on the board */
+.lf-sign{padding-bottom:0}
+.lf-sign::after{display:none}
+.lf-sw{position:relative;display:inline-block;padding:0 1.2%}
+.lf-sign span{display:block;line-height:.74;padding-top:.06em}
+.lf-sw::after{content:"";display:block;height:clamp(18px,2.4vw,34px);margin:0 -1%;background:repeating-linear-gradient(60deg,transparent 0 14px,#1e3b2c 14px 18px),repeating-linear-gradient(-60deg,transparent 0 14px,#1e3b2c 14px 18px);border-top:5px solid #1e3b2c;border-bottom:5px solid #1e3b2c;box-shadow:0 -2px 0 rgba(255,255,255,.06)}
+@media (max-width:640px){.lf-sw::after{border-width:3px;background:repeating-linear-gradient(60deg,transparent 0 8px,#1e3b2c 8px 11px),repeating-linear-gradient(-60deg,transparent 0 8px,#1e3b2c 8px 11px)}}
+.lf-sw::after{border-color:#2c5a41;background:repeating-linear-gradient(60deg,transparent 0 14px,#2c5a41 14px 18px),repeating-linear-gradient(-60deg,transparent 0 14px,#2c5a41 14px 18px)}
+@media (max-width:640px){.lf-sw::after{background:repeating-linear-gradient(60deg,transparent 0 8px,#2c5a41 8px 11px),repeating-linear-gradient(-60deg,transparent 0 8px,#2c5a41 8px 11px)}}
