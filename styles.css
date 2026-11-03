@@ -260,3 +260,43 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
 @media (max-width:640px){.aform fieldset{padding:22px 18px}.chk span{font-size:13px;padding:8px 14px}}
 .sent[hidden],.aform[hidden]{display:none}
 .submit{font-family:Oswald,"Arial Narrow",sans-serif}
+
+/* ===== Legends Field scoreboard (Sandwich of the Week) ===== */
+.lf{position:relative;padding:70px 0 0;overflow:hidden;background:linear-gradient(180deg,#1a2a33 0%,#22343c 38%,#0d1f17 72%,var(--green) 100%)}
+.lf-sky{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(255,244,214,.16),transparent 45%),radial-gradient(ellipse at 85% 0%,rgba(255,244,214,.16),transparent 45%);pointer-events:none}
+.lf-board{position:relative;max-width:1600px;margin:0 auto;padding:0 2%}
+.lf-sign{display:flex;justify-content:center;position:relative;padding-bottom:18px}
+.lf-sign::after{content:"";position:absolute;left:24%;right:24%;bottom:0;height:22px;background:repeating-linear-gradient(60deg,transparent 0 16px,#1e3b2c 16px 20px),repeating-linear-gradient(-60deg,transparent 0 16px,#1e3b2c 16px 20px);border-top:4px solid #1e3b2c;border-bottom:4px solid #1e3b2c}
+.lf-sign span{font-family:"Alfa Slab One",Georgia,serif;font-size:clamp(40px,7.4vw,108px);letter-spacing:.12em;text-transform:uppercase;line-height:1;background:linear-gradient(180deg,#fdfdfd 0%,#d6dbde 45%,#9aa3a8 55%,#e9ecee 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #4c565b) drop-shadow(0 6px 10px rgba(0,0,0,.55));padding:0 .1em}
+.lf-rig{display:grid;grid-template-columns:1.1fr .8fr 4fr .8fr 1.1fr;gap:14px;align-items:stretch;background:#16301f;border:6px solid #1e3b2c;border-radius:6px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.5);background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 22px)}
+.lf-tower{background:#1f4d36;border:3px solid #163a28;border-radius:4px;padding:22px 10px;text-align:center;color:var(--gold);font-family:Anton,Impact,sans-serif;text-transform:uppercase;display:flex;flex-direction:column;align-items:center}
+.lf-th{font-size:22px;line-height:1.05;letter-spacing:.04em}
+.lf-tower ul{list-style:none;margin:14px 0 0;padding:0;font-size:clamp(15px,1.35vw,20px);line-height:1.55;letter-spacing:.03em}
+.lf-side{display:flex;flex-direction:column;gap:12px}
+.lf-mini{flex:1;background:#153a27;border:4px solid #0b1f15;border-radius:4px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 30px rgba(0,0,0,.45)}
+.lf-mini img{width:84%;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+.lf-plate{background:#123222;border:2px solid #0b1f15;border-radius:3px;text-align:center;padding:10px 4px;font-weight:500;letter-spacing:.16em;font-size:11px;color:#d7dfd9;text-transform:uppercase}
+.lf-plate b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(15px,1.4vw,22px);letter-spacing:.06em;color:#fff;margin-top:2px}
+.lf-screen{position:relative;overflow:hidden;border:10px solid #0a0f0c;border-radius:4px;background:#f3a81c;min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 20px 24px;color:#1d3326}
+.lf-paint{position:absolute;inset:0;background:radial-gradient(ellipse at 8% 30%,rgba(255,236,236,.85),transparent 22%),radial-gradient(ellipse at 4% 80%,rgba(255,236,236,.9),transparent 25%),radial-gradient(ellipse at 96% 20%,rgba(255,236,236,.85),transparent 24%),radial-gradient(ellipse at 94% 75%,rgba(255,236,236,.8),transparent 22%),radial-gradient(ellipse at 50% 50%,#ffbd2e,transparent 70%),repeating-linear-gradient(100deg,rgba(255,255,255,.06) 0 3px,transparent 3px 11px);pointer-events:none}
+.lf-screen>*:not(.lf-paint){position:relative}
+.lf-kicker{font-weight:700;letter-spacing:.28em;font-size:15px;text-transform:uppercase;background:#1d3326;color:var(--gold);padding:6px 14px;border-radius:3px}
+.lf-title{font-family:Anton,Impact,sans-serif;font-size:clamp(48px,5.6vw,100px);white-space:nowrap;line-height:.9;margin:12px 0 4px;color:#1d3326;letter-spacing:.01em}
+.lf-mid{display:flex;align-items:center;justify-content:center;gap:0;width:100%;margin:6px 0}
+.lf-helm{width:26%;max-width:200px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));position:relative;z-index:2}
+.lf-helm.gb{transform:scaleX(-1);margin-left:-3%}
+.lf-helm.opp{transform:scaleX(-1);margin-right:-3%}
+.lf-photo{width:44%;aspect-ratio:4/3;max-width:330px;border-radius:10px;border:5px solid #fff;background:url(images/sandwich-of-the-week.jpg) 50% 60%/cover;box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.lf-vs{display:flex;align-items:center;gap:12px;margin-top:10px;font-family:Anton,Impact,sans-serif;text-transform:uppercase}
+.lf-vs i{width:46px;height:16px;background:repeating-linear-gradient(135deg,#1d3326 0 5px,transparent 5px 10px)}
+.lf-vs .t{font-size:30px;color:#fff;background:#1d3326;padding:4px 14px;border-radius:3px;letter-spacing:.03em}
+.lf-vs .v{font-size:24px;color:#1d3326}
+.lf-sub{margin-top:12px;font-weight:700;letter-spacing:.2em;font-size:15px;text-transform:uppercase;color:#1d3326}
+.lf-caption{text-align:center;color:var(--soft);font-size:19px;max-width:760px;margin:22px auto 0;line-height:1.5}
+.lf-stands{height:150px;margin-top:40px;background:repeating-linear-gradient(90deg,transparent 0 11%,rgba(245,194,66,.85) 11% 11.8%),repeating-linear-gradient(180deg,#123a26 0 14px,#0b2a1b 14px 22px);-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent);mask-image:linear-gradient(180deg,#000 30%,transparent);opacity:.9}
+@media (max-width:1100px){.lf-rig{grid-template-columns:1fr}.lf-tower,.lf-side{display:none}.lf-screen{min-height:0}}
+@media (max-width:640px){.lf{padding-top:46px}.lf-sign span{letter-spacing:.06em}.lf-sign::after{left:10%;right:10%}.lf-rig{padding:8px;border-width:4px}.lf-screen{border-width:6px;padding:20px 10px}.lf-kicker{font-size:11px;letter-spacing:.2em}.lf-helm{width:28%}.lf-photo{width:48%;border-width:3px}.lf-vs{gap:6px}.lf-vs i{display:none}.lf-vs .t{font-size:20px;padding:3px 8px}.lf-vs .v{font-size:16px}.lf-sub{font-size:11px;letter-spacing:.12em}.lf-caption{font-size:16px;padding:0 4px}.lf-stands{height:90px}}
+.lf-sign span{white-space:nowrap}
+.lf-tower{justify-content:center}
+@media (max-width:640px){.lf-sign span{font-size:8.4vw;letter-spacing:.04em}}
+.lf-sign{padding-bottom:34px}
