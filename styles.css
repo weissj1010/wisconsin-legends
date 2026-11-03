@@ -222,3 +222,4 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
 @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.tk-move{animation-duration:200s}}
 @media (max-width:640px){.ticker{height:34px}.tk-label{padding-left:16px;font-size:15px;padding-right:22px}.tk-label b{font-size:10px}.tk-item{font-size:12px}}
+@media (min-width:641px){.event .ev-icon{height:118px;width:210px;margin:-40px 0}}
