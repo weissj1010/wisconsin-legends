@@ -223,3 +223,7 @@ footer .btn-line:hover{background:rgba(11,42,30,.1)}
 @media (prefers-reduced-motion:reduce){.tk-move{animation-duration:200s}}
 @media (max-width:640px){.ticker{height:34px}.tk-label{padding-left:16px;font-size:15px;padding-right:22px}.tk-label b{font-size:10px}.tk-item{font-size:12px}}
 @media (min-width:641px){.event .ev-icon{height:118px;width:210px;margin:-40px 0}}
+.roster-tabs button{white-space:nowrap}
+@media (max-width:640px){.roster-tabs{justify-content:flex-start;gap:22px;overflow-x:auto;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px}.roster-tabs::-webkit-scrollbar{display:none}.roster-tabs button{flex:none}}
+@media (max-width:640px){.roster-tabs{justify-content:space-between;gap:12px;overflow:visible;margin-left:0;margin-right:0;padding:0}.roster-tabs button{font-size:17px}.roster-tabs button small{font-size:8.5px;letter-spacing:.08em}}
+@media (max-width:370px){.roster-tabs{gap:8px}.roster-tabs button{font-size:16px}.roster-tabs button small{font-size:8px;letter-spacing:.06em}}
