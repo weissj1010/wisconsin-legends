@@ -384,3 +384,6 @@ html.loading,html.loading body{overflow:hidden}
 .loader-skip:hover{border-color:var(--gold);color:var(--gold)}
 .loader{background:radial-gradient(ellipse at 50% 50%,#17291f,#0a120e 80%)}
 @media (max-aspect-ratio:9/16){.loader video{object-fit:contain}}
+
+html{scrollbar-gutter:stable}
+.loader{transition:opacity .8s ease}
